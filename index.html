@@ -26,8 +26,8 @@
         .social-btn { padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; color: white; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .yt-btn { background: #ff0000; box-shadow: 0 4px 15px rgba(255,0,0,0.3); }
         .ig-btn { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 4px 15px rgba(220,39,67,0.3); }
-        .social-btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
-        .uid-highlight { color: #f093fb; font-weight: bold; letter-spacing: 1px; }
+        .uid-text { display: block; font-size: 0.8rem; color: #00f2fe; margin-top: 4px; font-family: 'Orbitron', sans-serif; }
+        .status-ready { color: #00ff88; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -35,7 +35,6 @@
     <div class="header">
         <h1>🔥 FREE FIRE TOURNAMENT 🔥</h1>
         <div class="host-id">Hosted by: <b>SURVIVALGUY444</b></div><br>
-        <div class="host-id">Host UID: <span class="uid-highlight">2552411940</span></div><br>
         <div class="live-badge">BATTLE GROUND LIVE</div>
     </div>
 
@@ -52,12 +51,11 @@
         <div class="glass-card">
             <h2>📜 RULES & REGULATIONS</h2>
             <ul class="rules-list">
-                <li><b>No Hacks:</b> Use of any third-party tools or scripts will lead to an immediate ban.</li>
-                <li><b>Device:</b> Only Mobile players are allowed. No Emulator/PC players.</li>
-                <li><b>Match Format:</b> 20 Players Battle Royale. <b>Top 10</b> will qualify for the Finals.</li>
-                <li><b>Fair Play:</b> Teaming up with opponents is strictly prohibited.</li>
-                <li><b>Level Requirement:</b> All players must have a minimum account level of 40.</li>
-                <li><b>Punctuality:</b> Players must join the room 10 minutes before the start time.</li>
+                <li><b>No Hacks:</b> Third-party tools or scripts = Immediate Ban.</li>
+                <li><b>Device:</b> Only Mobile players allowed. No Emulator/PC.</li>
+                <li><b>Match Format:</b> 20 Players match. <b>Top 10</b> Qualify for Finals.</li>
+                <li><b>Fair Play:</b> No teaming up. Play fair, win big!</li>
+                <li><b>Account:</b> Minimum Level 40 required.</li>
             </ul>
         </div>
 
@@ -68,31 +66,38 @@
                     <thead>
                         <tr>
                             <th># ID</th>
-                            <th>Player Name</th>
+                            <th>Player Details</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>01</td><td>Player 1</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>02</td><td>Player 2</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>03</td><td>Player 3</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>04</td><td>Player 4</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>05</td><td>Player 5</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>06</td><td>Player 6</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>07</td><td>Player 7</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>08</td><td>Player 8</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>09</td><td>Player 9</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>10</td><td>Player 10</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>11</td><td>Player 11</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>12</td><td>Player 12</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>13</td><td>Player 13</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>14</td><td>Player 14</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>15</td><td>Player 15</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>16</td><td>Player 16</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>17</td><td>Player 17</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>18</td><td>Player 18</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>19</td><td>Player 19</td><td style="color:#00ff88">Ready</td></tr>
-                        <tr><td>20</td><td>Player 20</td><td style="color:#00ff88">Ready</td></tr>
+                        <tr>
+                            <td>01</td>
+                            <td>
+                                <b>Rahul Jethva</b>
+                                <span class="uid-text">UID: 2552411940</span>
+                            </td>
+                            <td><span class="status-ready">Ready</span></td>
+                        </tr>
+                        <tr><td>02</td><td>Player 2</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>03</td><td>Player 3</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>04</td><td>Player 4</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>05</td><td>Player 5</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>06</td><td>Player 6</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>07</td><td>Player 7</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>08</td><td>Player 8</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>09</td><td>Player 9</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>10</td><td>Player 10</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>11</td><td>Player 11</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>12</td><td>Player 12</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>13</td><td>Player 13</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>14</td><td>Player 14</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>15</td><td>Player 15</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>16</td><td>Player 16</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>17</td><td>Player 17</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>18</td><td>Player 18</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>19</td><td>Player 19</td><td><span class="status-ready">Ready</span></td></tr>
+                        <tr><td>20</td><td>Player 20</td><td><span class="status-ready">Ready</span></td></tr>
                     </tbody>
                 </table>
             </div>
