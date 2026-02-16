@@ -1,2 +1,146 @@
-# Rahul-tournament-
-FF tournament 
+# Rahul-tournament
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Tournament Updates</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f0f1f; color: #fff; text-align: center; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: #1a1a2e; padding: 20px; border-radius: 15px; border: 2px solid #e94560; box-shadow: 0px 0px 20px rgba(233, 69, 96, 0.5); }
+        h1 { color: #e94560; text-transform: uppercase; letter-spacing: 2px; }
+        .section { background: #16213e; padding: 15px; margin: 15px 0; border-radius: 10px; text-align: left; border-left: 5px solid #e94560; }
+        h2 { color: #00d2ff; font-size: 1.2rem; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #444; padding: 10px; text-align: center; }
+        th { background-color: #e94560; color: white; }
+        .status-live { color: #2ecc71; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔥 Free Fire Tournament 🔥</h1>
+    <p>Tournament ni badhi updates ahiya malse.</p>
+
+    <div class="section">
+        <h2>📜 Rules & Regulations</h2>
+        <ul>
+            <li>No Hacks / Config Files (Direct Ban)</li>
+            <li>All Players must be Level 40+</li>
+            <li>Teaming Up with other squads is not allowed</li>
+            <li>Map: Bermuda (Classic)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👥 Registered Squads</h2>
+        <table>
+            <tr>
+                <th>Squad Name</th>
+                <th>Leader</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Team Immortal</td>
+                <td>Killer_FF</td>
+                <td class="status-live">Verified</td>
+            </tr>
+            <tr>
+                <td>Sky High</td>
+                <td>Legend_07</td>
+                <td class="status-live">Verified</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🏆 Tournament Schedule</h2>
+        <p><b>Round 1:</b> 25th Feb (Qualifiers)</p>
+        <p><b>Round 2:</b> 27th Feb (Semi-Finals)</p>
+        <p><b>Grand Final:</b> 1st March</p>
+    </div>
+
+    <div class="section">
+        <h2>📋 Total Participants</h2>
+        <p>Total Slots: 48 | Remaining: 12</p>
+    </div>
+
+    <p style="font-size: 0.8rem; color: #888;">Powered by GitHub Pages</p>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Tournament Updates</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f0f1f; color: #fff; text-align: center; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: #1a1a2e; padding: 20px; border-radius: 15px; border: 2px solid #e94560; box-shadow: 0px 0px 20px rgba(233, 69, 96, 0.5); }
+        h1 { color: #e94560; text-transform: uppercase; letter-spacing: 2px; }
+        .section { background: #16213e; padding: 15px; margin: 15px 0; border-radius: 10px; text-align: left; border-left: 5px solid #e94560; }
+        h2 { color: #00d2ff; font-size: 1.2rem; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #444; padding: 10px; text-align: center; }
+        th { background-color: #e94560; color: white; }
+        .status-live { color: #2ecc71; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔥 Free Fire Tournament 🔥</h1>
+    <p>Tournament ni badhi updates ahiya malse.</p>
+
+    <div class="section">
+        <h2>📜 Rules & Regulations</h2>
+        <ul>
+            <li>No Hacks / Config Files (Direct Ban)</li>
+            <li>All Players must be Level 40+</li>
+            <li>Teaming Up with other squads is not allowed</li>
+            <li>Map: Bermuda (Classic)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👥 Registered Squads</h2>
+        <table>
+            <tr>
+                <th>Squad Name</th>
+                <th>Leader</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Team Immortal</td>
+                <td>Killer_FF</td>
+                <td class="status-live">Verified</td>
+            </tr>
+            <tr>
+                <td>Sky High</td>
+                <td>Legend_07</td>
+                <td class="status-live">Verified</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🏆 Tournament Schedule</h2>
+        <p><b>Round 1:</b> 25th Feb (Qualifiers)</p>
+        <p><b>Round 2:</b> 27th Feb (Semi-Finals)</p>
+        <p><b>Grand Final:</b> 1st March</p>
+    </div>
+
+    <div class="section">
+        <h2>📋 Total Participants</h2>
+        <p>Total Slots: 48 | Remaining: 12</p>
+    </div>
+
+    <p style="font-size: 0.8rem; color: #888;">Powered by GitHub Pages</p>
+</div>
+
+</body>
+</html>
+
