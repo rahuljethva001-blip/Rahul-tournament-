@@ -23,7 +23,6 @@
             background-image: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%);
         }
         
-        /* Premium Header */
         .header { 
             background: linear-gradient(135deg, #0f2027, #2c5364); 
             padding: 60px 20px; 
@@ -44,17 +43,10 @@
             letter-spacing: 2px; 
         }
 
-        .host-title {
-            color: #ccc;
-            font-size: 1.3rem;
-            margin-top: 10px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+        .host-title { color: #ccc; font-size: 1.3rem; margin-top: 10px; font-weight: bold; }
 
         .container { max-width: 900px; margin: 20px auto 80px; padding: 0 20px; }
         
-        /* Professional Glass Cards */
         .glass-card { 
             background: var(--card-bg); 
             border-radius: 15px; 
@@ -62,7 +54,6 @@
             margin-bottom: 30px; 
             border: 1px solid rgba(255,255,255,0.08); 
             box-shadow: 0 15px 35px rgba(0,0,0,0.6); 
-            position: relative;
         }
 
         h2 { 
@@ -72,10 +63,8 @@
             margin-top: 0; 
             border-bottom: 1px solid rgba(255,255,255,0.1); 
             padding-bottom: 10px; 
-            text-transform: uppercase;
         }
 
-        /* Match Info Box */
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
         .info-box { 
             background: rgba(0, 242, 254, 0.05); 
@@ -85,53 +74,25 @@
             text-align: center; 
         }
         .info-box span { color: var(--accent); display: block; font-size: 0.8rem; text-transform: uppercase; }
-        .info-box b { font-size: 1.2rem; color: #fff; }
 
-        /* Table Styling */
         table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th { text-align: left; padding: 12px; color: #888; font-size: 0.9rem; border-bottom: 2px solid #222; }
+        th { text-align: left; padding: 12px; color: #888; border-bottom: 2px solid #222; }
         td { padding: 15px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        /* VIP PLAYER (Rahul Jethva) - GOLD STYLE */
-        .vip-row { 
-            background: rgba(255, 204, 0, 0.1); 
-            border-left: 5px solid var(--gold);
-        }
-        .gold-name { 
-            font-size: 1.4rem; 
-            font-weight: 900; 
-            color: var(--gold); 
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-            display: block;
-        }
-        .gold-uid { 
-            color: var(--gold); 
-            font-family: 'Orbitron'; 
-            font-size: 0.9rem; 
-            display: block; 
-            margin-top: 5px; 
-            opacity: 0.9;
-        }
+        /* VIP PLAYER (Rahul Jethva) */
+        .vip-row { background: rgba(255, 204, 0, 0.1); border-left: 5px solid var(--gold); }
+        .gold-name { font-size: 1.4rem; font-weight: 900; color: var(--gold); text-shadow: 0 0 10px rgba(255, 204, 0, 0.5); display: block; }
+        .gold-uid { color: var(--gold); font-family: 'Orbitron'; font-size: 0.9rem; display: block; margin-top: 5px; }
 
-        /* Normal Player Style */
-        .p-name { font-weight: bold; font-size: 1.2rem; color: #fff; display: block; }
-        .p-uid { color: var(--primary); font-family: 'Orbitron'; font-size: 0.85rem; display: block; margin-top: 5px; }
+        .p-name { font-weight: bold; font-size: 1.1rem; color: #fff; display: block; }
+        .p-uid { color: var(--primary); font-family: 'Orbitron'; font-size: 0.8rem; display: block; margin-top: 3px; }
 
         .btn-flex { display: flex; gap: 12px; margin-top: 20px; }
-        .social-btn { 
-            flex: 1; 
-            padding: 12px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            color: white; 
-            font-weight: bold; 
-            text-align: center; 
-            font-size: 1rem;
-        }
-        .yt { background: #ff0000; box-shadow: 0 5px 15px rgba(255,0,0,0.3); }
-        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 5px 15px rgba(220,39,67,0.3); }
+        .social-btn { flex: 1; padding: 12px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; text-align: center; }
+        .yt { background: #ff0000; }
+        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
 
-        footer { text-align: center; padding: 50px; color: #555; font-size: 0.9rem; letter-spacing: 1px; }
+        footer { text-align: center; padding: 50px; color: #555; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -144,26 +105,19 @@
     <div class="container">
         
         <div class="glass-card">
-            <h2>📅 Tournament Schedule</h2>
+            <h2>📅 Match Schedule</h2>
             <div class="info-grid">
-                <div class="info-box">
-                    <span>Match Date</span>
-                    <b>To Be Announced</b>
-                </div>
-                <div class="info-box">
-                    <span>Entry Fee</span>
-                    <b>FREE</b>
-                </div>
+                <div class="info-box"><span>Match Date</span><b>To Be Announced</b></div>
+                <div class="info-box"><span>Entry Fee</span><b>FREE</b></div>
             </div>
         </div>
 
         <div class="glass-card">
             <h2>📜 Rules & Regulations</h2>
-            <ul style="list-style: none; padding: 0; line-height: 2; font-size: 1.1rem;">
-                <li>🔥 <b>No Hacks:</b> Permanent ban for any third-party tools.</li>
-                <li>🔥 <b>Device:</b> Mobile Only. No Emulator/PC players.</li>
-                <li>🔥 <b>Format:</b> 20 Players Match - Top 10 Qualify for Finals.</li>
-                <li>🔥 <b>Punctuality:</b> Join the room 10 min before the start time.</li>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li>🔥 <b>No Hacks:</b> Immediate permanent ban.</li>
+                <li>🔥 <b>Device:</b> Mobile Only (No Emulator).</li>
+                <li>🔥 <b>Format:</b> 20 Players - Top 10 Qualify.</li>
             </ul>
             <div class="btn-flex">
                 <a href="https://youtube.com/@survivalguy444" class="social-btn yt">YOUTUBE</a>
@@ -185,42 +139,34 @@
                     <tbody>
                         <tr class="vip-row">
                             <td>01</td>
-                            <td>
-                                <span class="gold-name">Rahul Jethva</span>
-                                <span class="gold-uid">UID: 2552411940</span>
-                            </td>
+                            <td><span class="gold-name">Rahul Jethva</span><span class="gold-uid">UID: 2552411940</span></td>
                             <td><b style="color: var(--gold);">VERIFIED</b></td>
                         </tr>
-                        <tr>
-                            <td>02</td>
-                            <td><span class="p-name">Player 2</span><span class="p-uid">UID: ----------</span></td>
-                            <td>Ready</td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td><span class="p-name">Player 3</span><span class="p-uid">UID: ----------</span></td>
-                            <td>Ready</td>
-                        </tr>
-                        <tr>
-                            <td>04</td>
-                            <td><span class="p-name">Player 4</span><span class="p-uid">UID: ----------</span></td>
-                            <td>Ready</td>
-                        </tr>
-                        <tr>
-                            <td>05</td>
-                            <td><span class="p-name">Player 5</span><span class="p-uid">UID: ----------</span></td>
-                            <td>Ready</td>
-                        </tr>
+                        <tr><td>02</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>03</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>04</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>05</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>06</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>07</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>08</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>09</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>10</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>11</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>12</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>13</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>14</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>15</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>16</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>17</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>18</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>19</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
+                        <tr><td>20</td><td><span class="p-name">Empty Slot</span><span class="p-uid">UID: ----------</span></td><td>Ready</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
-
     </div>
 
-    <footer>
-        © 2026 SURVIVALGUY444 ESPORTS | DESIGNED FOR CHAMPIONS
-    </footer>
-
+    <footer>© 2026 SURVIVALGUY444 ESPORTS</footer>
 </body>
 </html>
