@@ -3,71 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Fire Tournament Updates</title>
+    <title>Free Fire Tournament by Survivalguy444</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f0f1f; color: #fff; text-align: center; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: #1a1a2e; padding: 20px; border-radius: 15px; border: 2px solid #e94560; box-shadow: 0px 0px 20px rgba(233, 69, 96, 0.5); }
-        h1 { color: #e94560; text-transform: uppercase; letter-spacing: 2px; }
-        .section { background: #16213e; padding: 15px; margin: 15px 0; border-radius: 10px; text-align: left; border-left: 5px solid #e94560; }
-        h2 { color: #00d2ff; font-size: 1.2rem; margin-top: 0; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #444; padding: 10px; text-align: center; }
-        th { background-color: #e94560; color: white; }
-        .status-live { color: #2ecc71; font-weight: bold; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #0a0a1a; color: #fff; text-align: center; margin: 0; padding: 0; }
+        .header { background: linear-gradient(45deg, #6a11cb, #2575fc); padding: 40px 20px; border-bottom: 4px solid #fff; }
+        h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; }
+        .sub-header { font-size: 1.3rem; color: #00d2ff; margin-top: 10px; font-weight: bold; }
+        .live-tag { background: #ff0000; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+        .container { max-width: 800px; margin: 20px auto; padding: 15px; }
+        .info-card { background: #16213e; border: 1px solid #2575fc; border-radius: 15px; padding: 20px; margin-bottom: 25px; text-align: left; }
+        .info-card h2 { color: #00d2ff; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; background: #1a1a2e; border-radius: 10px; overflow: hidden; }
+        th, td { padding: 12px; text-align: center; border-bottom: 1px solid #333; }
+        th { background: #2575fc; color: white; text-transform: uppercase; }
+        .status { color: #00ff88; font-weight: bold; }
+        .highlight { color: #ffcc00; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>🔥 Free Fire Tournament 🔥</h1>
-    <p>Tournament ni badhi updates ahiya malse.</p>
-
-    <div class="section">
-        <h2>📜 Rules & Regulations</h2>
-        <ul>
-            <li>No Hacks / Config Files (Direct Ban)</li>
-            <li>All Players must be Level 40+</li>
-            <li>Teaming Up with other squads is not allowed</li>
-            <li>Map: Bermuda (Classic)</li>
-        </ul>
+    <div class="header">
+        <h1>🔥 FREE FIRE TOURNAMENT 🔥</h1>
+        <div class="sub-header">By Survivalguy444</div>
+        <br>
+        <span class="live-tag">● BATTLE STARTING SOON</span>
     </div>
 
-    <div class="section">
-        <h2>👥 Registered Squads</h2>
-        <table>
-            <tr>
-                <th>Squad Name</th>
-                <th>Leader</th>
-                <th>Status</th>
-            </tr>
-            <tr>
-                <td>Team Immortal</td>
-                <td>Killer_FF</td>
-                <td class="status-live">Verified</td>
-            </tr>
-            <tr>
-                <td>Sky High</td>
-                <td>Legend_07</td>
-                <td class="status-live">Verified</td>
-            </tr>
-        </table>
+    <div class="container">
+        
+        <div class="info-card">
+            <h2>📅 Match Details</h2>
+            <p><b>Date:</b> 25 February 2026 (Tame badli shaksho)</p>
+            <p><b>Time:</b> 04:00 PM IST</p>
+            <p><b>Format:</b> Pehli match <span class="highlight">20 players</span> ni thase, mathi <span class="highlight">Top 10</span> select thase final match mate.</p>
+        </div>
+
+        <div class="info-card">
+            <h2>👤 Player List (Total 20)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Player Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="player-table">
+                    <tr><td>1</td><td>Player 1</td><td class="status">Ready</td></tr>
+                    <tr><td>2</td><td>Player 2</td><td class="status">Ready</td></tr>
+                    <tr><td>3</td><td>Player 3</td><td class="status">Ready</td></tr>
+                    <tr><td>4</td><td>Player 4</td><td class="status">Ready</td></tr>
+                    <tr><td>5</td><td>Player 5</td><td class="status">Ready</td></tr>
+                    <tr><td>6</td><td>Player 6</td><td class="status">Ready</td></tr>
+                    <tr><td>7</td><td>Player 7</td><td class="status">Ready</td></tr>
+                    <tr><td>8</td><td>Player 8</td><td class="status">Ready</td></tr>
+                    <tr><td>9</td><td>Player 9</td><td class="status">Ready</td></tr>
+                    <tr><td>10</td><td>Player 10</td><td class="status">Ready</td></tr>
+                    <tr><td>11</td><td>Player 11</td><td class="status">Ready</td></tr>
+                    <tr><td>12</td><td>Player 12</td><td class="status">Ready</td></tr>
+                    <tr><td>13</td><td>Player 13</td><td class="status">Ready</td></tr>
+                    <tr><td>14</td><td>Player 14</td><td class="status">Ready</td></tr>
+                    <tr><td>15</td><td>Player 15</td><td class="status">Ready</td></tr>
+                    <tr><td>16</td><td>Player 16</td><td class="status">Ready</td></tr>
+                    <tr><td>17</td><td>Player 17</td><td class="status">Ready</td></tr>
+                    <tr><td>18</td><td>Player 18</td><td class="status">Ready</td></tr>
+                    <tr><td>19</td><td>Player 19</td><td class="status">Ready</td></tr>
+                    <tr><td>20</td><td>Player 20</td><td class="status">Ready</td></tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
-    <div class="section">
-        <h2>🏆 Tournament Schedule</h2>
-        <p><b>Round 1:</b> 25th Feb (Qualifiers)</p>
-        <p><b>Round 2:</b> 27th Feb (Semi-Finals)</p>
-        <p><b>Grand Final:</b> 1st March</p>
+    <div style="margin-bottom: 40px; color: #888;">
+        © 2026 | Managed by Survivalguy444
     </div>
-
-    <div class="section">
-        <h2>📋 Total Participants</h2>
-        <p>Total Slots: 48 | Remaining: 12</p>
-    </div>
-
-    <p style="font-size: 0.8rem; color: #888;">Powered by GitHub Pages</p>
-</div>
 
 </body>
 </html>
-
