@@ -6,50 +6,27 @@
     <title>Survivalguy 444 | Rahul Jethva</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
     <style>
         :root { --gold: #ffcc00; --accent: #ff3131; --bg: #05050a; --glass: rgba(20, 20, 30, 0.98); }
-        
-        body { 
-            font-family: 'Rajdhani', sans-serif; background: var(--bg); color: #fff; margin: 0; 
-            background-image: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%);
-            height: 100vh; overflow: hidden;
-        }
-
-        /* Top Bar */
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg); color: #fff; margin: 0; background-image: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%); height: 100vh; overflow: hidden; }
         .notice-bar { background: linear-gradient(90deg, #ff3131, #660000); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 0.85rem; position: fixed; top: 0; width: 100%; z-index: 900; }
-
-        /* Menu Section with Text */
         .menu-container { position: fixed; top: 45px; right: 15px; z-index: 1000; display: flex; align-items: center; gap: 10px; }
         .menu-text { font-family: 'Orbitron'; font-size: 0.7rem; color: var(--gold); animation: pulse 1.5s infinite; }
         .menu-icon { cursor: pointer; background: var(--accent); padding: 12px; border-radius: 10px; box-shadow: 0 0 15px var(--accent); display: flex; flex-direction: column; gap: 4px; }
         .dot { width: 5px; height: 5px; background: white; border-radius: 50%; }
-
-        /* Navigation Overlay */
         .nav-overlay { position: fixed; top: 0; left: 100%; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 1001; transition: 0.5s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .nav-overlay.active { left: 0; }
         .nav-overlay a { font-family: 'Orbitron'; font-size: 1.6rem; color: white; text-decoration: none; margin: 15px; border-left: 3px solid transparent; padding-left: 15px; }
         .nav-overlay a:hover { color: var(--gold); border-left-color: var(--gold); }
-
-        /* Content Sections */
         .section { display: none; padding: 110px 20px 40px; height: calc(100vh - 160px); overflow-y: auto; text-align: center; }
         .section.active { display: block; animation: zoomIn 0.5s; }
-
-        .card { background: var(--glass); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,49,49,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 25px; text-align: left; }
+        .card { background: var(--glass); border-radius: 20px; padding: 25px; border: 1px solid rgba(255,49,49,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 25px; text-align: left; }
         h2 { font-family: 'Orbitron'; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 0; }
-
-        /* Home Page Layout */
         .logo-box { width: 140px; height: 140px; margin: 0 auto 15px; border-radius: 50%; border: 4px solid var(--accent); overflow: hidden; box-shadow: 0 0 30px var(--accent); }
         .logo-box img { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* Guide Text (This answers your question) */
         .guide-text { background: rgba(255, 204, 0, 0.1); color: var(--gold); border: 1px solid var(--gold); padding: 15px; border-radius: 50px; font-weight: bold; margin: 20px 0; font-family: 'Orbitron'; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; animation: flash 2s infinite; }
-
-        /* Player Table */
         table { width: 100%; border-collapse: collapse; }
-        td { padding: 15px 10px; border-bottom: 1px solid #222; font-size: 1.1rem; }
-        .vip { color: var(--gold); font-weight: bold; border-left: 4px solid var(--gold); padding-left: 10px; }
-
+        td { padding: 12px 10px; border-bottom: 1px solid #222; font-size: 1.1rem; }
         @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
     </style>
 </head>
@@ -74,18 +51,12 @@
     </nav>
 
     <section id="home" class="section active">
-        <div class="logo-box animate__animated animate__zoomIn">
-            <img src="https://image2url.com/r2/default/images/1771316582322-86f0b5f6-4a48-42b1-bb1c-de0fe5039812.jpg" alt="Logo">
-        </div>
+        <div class="logo-box"><img src="https://image2url.com/r2/default/images/1771316582322-86f0b5f6-4a48-42b1-bb1c-de0fe5039812.jpg" alt="Logo"></div>
         <h1 style="font-family: 'Orbitron'; font-size: 2rem;">SURVIVALGUY 444</h1>
         <p style="color: var(--gold); letter-spacing: 5px;">RAHUL JETHVA</p>
-
-        <div class="guide-text animate__animated animate__pulse animate__infinite">
-            બધી વિગત જોવા માટે ઉપરના 3-DOTS મેનુ પર ક્લિક કરો 👆
-        </div>
-
+        <div class="guide-text">બધી વિગત જોવા માટે ઉપરના 3-DOTS મેનુ પર ક્લિક કરો 👆</div>
         <div class="card" style="text-align: center;">
-            <p>Ready for the Battle? 22nd Feb, Sunday bopare 3:00 vage match start thase. Register karva mate YouTube visit karo.</p>
+            <p>Ready for the Battle? 22nd Feb, Sunday bopare 3:00 vage match start thase.</p>
             <a href="https://youtube.com/@survivalguy444" style="background:red; color:white; padding:15px 30px; text-decoration:none; border-radius:50px; font-family:'Orbitron'; font-weight:900; display:inline-block; margin-top:10px;">YOUTUBE CHANNEL</a>
         </div>
     </section>
@@ -93,11 +64,20 @@
     <section id="match" class="section">
         <div class="card">
             <h2>🎮 MATCH DETAILS</h2>
-            <p>📍 <b>Map:</b> Bermuda (Full Map Battle)</p>
-            <p>🏁 <b>Format:</b> 3-Match Points Series</p>
-            <p>🔫 <b>Weapon Skin:</b> No Property (Fair Play)</p>
-            <p>🛡️ <b>Skills:</b> Character Skill ON</p>
-            <p>📊 <b>Points:</b> 1 Kill = 1 Point | Booyah = 12 Points</p>
+            <p>📍 <b>Map:</b> Bermuda | 🏁 <b>Format:</b> 3-Match Series</p>
+            <p>🔫 <b>Weapon Skin:</b> No Property | 🛡️ <b>Skills:</b> ON</p>
+            <hr style="border: 0.5px solid #444; margin: 15px 0;">
+            <h3 style="color:var(--gold); font-family:'Orbitron'; font-size: 1rem;">📊 POINTS TABLE</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem;">
+                <div>🥇 1st: <b>12 pts</b></div><div>🥈 2nd: <b>09 pts</b></div>
+                <div>🥉 3rd: <b>08 pts</b></div><div>🏅 4th: <b>07 pts</b></div>
+                <div>🏅 5th: <b>06 pts</b></div><div>🏅 6th: <b>05 pts</b></div>
+                <div>🏅 7th: <b>04 pts</b></div><div>🏅 8th: <b>03 pts</b></div>
+                <div>🏅 9th: <b>02 pts</b></div><div>🏅 10th: <b>01 pts</b></div>
+            </div>
+            <div style="background: rgba(255,49,49,0.2); padding: 10px; border-radius: 8px; margin-top: 15px; border: 1px solid var(--accent); text-align: center;">
+                🔥 <b>EACH KILL = <span style="color:var(--gold);">01 POINT</span></b>
+            </div>
         </div>
     </section>
 
@@ -105,26 +85,10 @@
         <div class="card">
             <h2>👤 PLAYER LIST (1-20)</h2>
             <table>
-                <tr class="vip"><td>01</td><td>RAHUL JETHVA</td><td>HOST</td></tr>
+                <tr style="color:var(--gold);"><td>01</td><td>RAHUL JETHVA</td><td>HOST</td></tr>
                 <tr><td>02</td><td>Empty Slot</td><td>Ready</td></tr>
                 <tr><td>03</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>04</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>05</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>06</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>07</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>08</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>09</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>10</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>11</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>12</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>13</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>14</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>15</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>16</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>17</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>18</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>19</td><td>Empty Slot</td><td>Ready</td></tr>
-                <tr><td>20</td><td>Empty Slot</td><td>Ready</td></tr>
+                <tr><td>04-20</td><td colspan="2">Empty Slots...</td></tr>
             </table>
         </div>
     </section>
@@ -132,18 +96,15 @@
     <section id="rules" class="section">
         <div class="card">
             <h2>📜 RULEBOOK</h2>
-            <p>✅ <b>Mobile Only:</b> PC/Emulator allowed nathi.</p>
-            <p>✅ <b>No Teaming:</b> Teamup karshe to ban madshe.</p>
-            <p>✅ <b>No Hacks:</b> Fair play rakvu jaruri che.</p>
-            <p>✅ <b>YouTube:</b> Match nu gameplay channel par avshe.</p>
+            <p>✅ <b>Mobile Only</b> | ✅ <b>No Teaming</b> | ✅ <b>No Hacks</b></p>
         </div>
     </section>
 
     <section id="prize" class="section">
         <div class="card">
             <h2>🏆 PRIZE & COLLAB</h2>
-            <p>Winner gets <b>Diamonds & Shoutout</b> on Survivalguy 444 Channel.</p>
-            <p>Collaboration: <b>Rahul Jethva Official</b></p>
+            <p>Winner gets <b>Diamonds & Shoutout!</b></p>
+            <p>Collaboration: <b>Survivalguy 444</b></p>
         </div>
     </section>
 
