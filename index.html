@@ -8,84 +8,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <style>
-        :root { 
-            --gold: #ffcc00; 
-            --accent: #ff3131; 
-            --bg: #05050a; 
-            --glass: rgba(20, 20, 35, 0.95); 
-        }
+        :root { --gold: #ffcc00; --accent: #ff3131; --bg: #05050a; --glass: rgba(20, 20, 35, 0.95); }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg); color: #fff; margin: 0; background-image: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%); height: 100vh; overflow: hidden; }
 
-        body { 
-            font-family: 'Rajdhani', sans-serif; background: var(--bg); color: #fff; margin: 0; 
-            background-image: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%);
-            height: 100vh; overflow: hidden;
-        }
+        /* Announcement Notice */
+        .notice-bar { background: linear-gradient(90deg, #ff3131, #660000); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 0.85rem; position: fixed; top: 0; width: 100%; z-index: 900; }
 
-        /* 3-Dots Menu Style */
-        .menu-icon {
-            position: fixed; top: 20px; right: 20px; z-index: 1000;
-            cursor: pointer; background: var(--accent); padding: 12px; border-radius: 10px;
-            box-shadow: 0 0 15px var(--accent);
-        }
-        .dot { width: 5px; height: 5px; background: white; margin: 3px; border-radius: 50%; }
+        /* 3-Dots Menu Icon */
+        .menu-icon { position: fixed; top: 45px; right: 20px; z-index: 1000; cursor: pointer; background: var(--accent); padding: 12px; border-radius: 10px; box-shadow: 0 0 15px var(--accent); display: flex; flex-direction: column; gap: 4px; }
+        .dot { width: 5px; height: 5px; background: white; border-radius: 50%; }
 
-        /* Navigation Overlay */
-        .nav-overlay {
-            position: fixed; top: 0; left: 100%; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.98); z-index: 999; transition: 0.5s cubic-bezier(0.7, 0, 0.3, 1);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-        }
+        /* Nav Menu */
+        .nav-overlay { position: fixed; top: 0; left: 100%; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 999; transition: 0.5s cubic-bezier(0.7, 0, 0.3, 1); display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .nav-overlay.active { left: 0; }
-        .nav-overlay a {
-            font-family: 'Orbitron'; font-size: 1.8rem; color: white; text-decoration: none;
-            margin: 15px; transition: 0.3s; letter-spacing: 2px;
-        }
-        .nav-overlay a:hover { color: var(--gold); transform: scale(1.1); }
+        .nav-overlay a { font-family: 'Orbitron'; font-size: 1.6rem; color: white; text-decoration: none; margin: 15px; transition: 0.3s; letter-spacing: 2px; }
+        .nav-overlay a:hover { color: var(--gold); }
 
-        /* Content Display */
-        .section {
-            display: none; padding: 100px 20px 40px; height: calc(100vh - 140px); overflow-y: auto;
-        }
-        .section.active { display: block; animation: zoomIn 0.5s; }
+        /* Main Section Area */
+        .section { display: none; padding: 110px 20px 40px; height: calc(100vh - 150px); overflow-y: auto; text-align: center; }
+        .section.active { display: block; animation: fadeIn 0.5s; }
 
-        .card { 
-            background: var(--glass); border-radius: 20px; padding: 30px; 
-            border: 1px solid rgba(255,49,49,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
-        }
+        .card { background: var(--glass); border-radius: 20px; padding: 25px; border: 1px solid rgba(255,49,49,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 20px; }
+        h2 { font-family: 'Orbitron'; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 20px; }
 
-        h2 { font-family: 'Orbitron'; color: var(--accent); font-size: 2rem; margin-bottom: 20px; border-left: 5px solid var(--accent); padding-left: 15px; }
-        
-        /* Home Header */
-        .header { text-align: center; }
-        .logo-box {
-            width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%;
-            border: 5px solid var(--accent); box-shadow: 0 0 40px var(--accent);
-            overflow: hidden; background: #fff; animation: pulse 2s infinite;
-        }
+        /* Logo Header */
+        .logo-box { width: 130px; height: 130px; margin: 0 auto 15px; border-radius: 50%; border: 4px solid var(--accent); box-shadow: 0 0 30px var(--accent); overflow: hidden; background: #fff; }
         .logo-box img { width: 100%; height: 100%; object-fit: cover; }
-        h1 { font-family: 'Orbitron'; font-size: 2.5rem; letter-spacing: 3px; margin: 0; }
 
-        /* Tables & Lists */
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        td, th { padding: 15px; border-bottom: 1px solid #333; font-size: 1.2rem; }
-        .gold-row { background: rgba(255, 204, 0, 0.1); border-left: 5px solid var(--gold); }
+        /* Match Time Highlight */
+        .match-alert { background: rgba(255, 204, 0, 0.15); border: 2px dashed var(--gold); border-radius: 12px; padding: 15px; margin: 20px 0; }
+        .match-alert b { font-family: 'Orbitron'; color: var(--gold); font-size: 1.4rem; display: block; }
 
-        .info-item { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; border: 1px solid #222; }
-        .info-item b { color: var(--gold); }
+        /* Table Style */
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { color: var(--accent); padding: 10px; border-bottom: 2px solid #444; text-align: left; }
+        td { padding: 12px 10px; border-bottom: 1px solid #222; text-align: left; font-size: 1.1rem; }
+        .vip-row { background: rgba(255, 204, 0, 0.1); border-left: 4px solid var(--gold); }
 
-        /* Buttons */
-        .btn-box { display: flex; gap: 15px; margin-top: 30px; }
-        .s-btn { flex: 1; padding: 15px; border-radius: 12px; text-decoration: none; color: white; text-align: center; font-family: 'Orbitron'; font-weight: bold; font-size: 1.1rem; }
-        .yt { background: #ff0000; box-shadow: 0 0 20px rgba(255,0,0,0.4); }
-        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 0 20px rgba(220,39,67,0.4); }
-
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
+
+    <div class="notice-bar">
+        ⚡ TOURNAMENT: 22nd FEB (SUNDAY) @ 03:00 PM | BY RAHUL JETHVA
+    </div>
 
     <div class="menu-icon" onclick="toggleMenu()">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -96,70 +64,84 @@
         <a href="#" onclick="show('match')">🎮 MATCH INFO</a>
         <a href="#" onclick="show('players')">👤 PLAYER LIST</a>
         <a href="#" onclick="show('rules')">📜 RULEBOOK</a>
-        <a href="#" style="color:var(--accent); font-size: 1rem; margin-top: 50px;" onclick="toggleMenu()">CLOSE [X]</a>
+        <a href="#" onclick="show('prize')">🏆 PRIZE & COLLAB</a>
+        <a href="#" style="color:var(--accent); font-size: 1rem; margin-top: 40px;" onclick="toggleMenu()">CLOSE [X]</a>
     </nav>
 
     <section id="home" class="section active">
-        <div class="header">
-            <div class="logo-box">
-                <img src="https://image2url.com/r2/default/images/1771316582322-86f0b5f6-4a48-42b1-bb1c-de0fe5039812.jpg" alt="Logo">
-            </div>
-            <h1 class="animate__animated animate__fadeIn">Survivalguy 444</h1>
-            <p style="color: var(--gold); font-size: 1.4rem; font-weight: bold; letter-spacing: 5px;">RAHUL JETHVA OFFICIAL</p>
+        <div class="logo-box">
+            <img src="https://image2url.com/r2/default/images/1771316582322-86f0b5f6-4a48-42b1-bb1c-de0fe5039812.jpg" alt="Logo">
         </div>
-        <div class="card animate__animated animate__fadeInUp">
-            <p style="text-align: center; font-size: 1.2rem;">Welcome Legends! Aa website par tamne match ni badhi detail madishe. Aa video YouTube par post thase, so get ready for the action!</p>
-            <div class="btn-box">
-                <a href="https://youtube.com/@survivalguy444" class="s-btn yt">YOUTUBE</a>
-                <a href="https://instagram.com/rahul_jethva_.00" class="s-btn ig">INSTAGRAM</a>
-            </div>
+        <h1 style="font-family: 'Orbitron';">Survivalguy 444</h1>
+        <p style="color: var(--gold); font-weight: bold; letter-spacing: 3px;">RAHUL JETHVA</p>
+        <div class="match-alert">
+            <span>SUNDAY BATTLE TIME</span>
+            <b>22 FEB | 03:00 PM</b>
+        </div>
+        <div class="card">
+            <p>Welcome! Subscribe to Survivalguy 444 on YouTube for the full match video!</p>
         </div>
     </section>
 
     <section id="match" class="section">
         <div class="card">
-            <h2>🎮 MATCH DETAILS</h2>
-            <div class="info-item">Tournament Type: <span>3-Match Series</span></div>
-            <div class="info-item">Map: <span>Bermuda (Everlasting)</span></div>
-            <div class="info-item">Mode: <span>Solo Classic</span></div>
-            <div class="info-item">Gun Skins: <span>No (Competitive)</span></div>
-            <div class="info-item">Character Skill: <span>Yes (Active)</span></div>
-            <div class="info-item">Point System: <span>1 Kill = 1 Point</span></div>
-            <div class="info-item">Winning: <span>Booyah = 12 Points</span></div>
-            <p style="margin-top: 15px; color: #888;">*Badhi match na points calculate thaya pachi winner announce thashe.*</p>
+            <h2>🎮 MATCH INFO</h2>
+            <p><b>Map:</b> Bermuda</p>
+            <p><b>Rounds:</b> 3 Match Series</p>
+            <p><b>Gun Skin:</b> No Property</p>
+            <p><b>Points:</b> Kill=1pt, Booyah=12pts</p>
         </div>
     </section>
 
     <section id="players" class="section">
         <div class="card">
-            <h2>👤 REGISTERED PLAYERS</h2>
-            <table>
-                <thead>
-                    <tr style="color:var(--accent)"><th>#</th><th>Name</th><th>Status</th></tr>
-                </thead>
-                <tbody>
-                    <tr class="gold-row">
-                        <td>01</td><td><b>RAHUL JETHVA</b></td><td style="color:var(--gold)">HOST</td>
-                    </tr>
-                    <tr><td>02</td><td>Empty Slot</td><td>Ready</td></tr>
-                    <tr><td>03</td><td>Empty Slot</td><td>Ready</td></tr>
-                    <tr><td>04</td><td>Empty Slot</td><td>Ready</td></tr>
-                    <tr><td>05-20</td><td colspan="2">Coming Soon...</td></tr>
-                </tbody>
-            </table>
+            <h2>👤 PLAYER LIST (1-20)</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>#</th><th>PLAYER NAME</th><th>STATUS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="vip-row"><td>01</td><td style="color:var(--gold);"><b>RAHUL JETHVA</b></td><td>HOST</td></tr>
+                        <tr><td>02</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>03</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>04</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>05</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>06</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>07</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>08</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>09</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>10</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>11</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>12</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>13</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>14</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>15</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>16</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>17</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>18</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>19</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>20</td><td>Empty Slot</td><td>Ready</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
     <section id="rules" class="section">
         <div class="card">
             <h2>📜 RULEBOOK</h2>
-            <div style="font-size: 1.2rem; line-height: 1.8;">
-                <p>⚠️ <b>No Teaming:</b> Jo koi player teamup karshe to te match mathi disqualify thashe.</p>
-                <p>⚠️ <b>No Hack:</b> Konpan prakar na script ke config file vaparnar par ban madshe.</p>
-                <p>⚠️ <b>Mobile Only:</b> Aa tournament fakt mobile players mate che. PC allowed nathi.</p>
-                <p>✅ <b>Fair Play:</b> Rahul Jethva no nirnay aakhri raheshe.</p>
-                <p>✅ <b>YouTube:</b> Aa match nu full gameplay <b>Survivalguy 444</b> channel par madshe.</p>
-            </div>
+            <p>🚫 No Teaming / No Hacks</p>
+            <p>📱 Mobile Only</p>
+            <p>🎥 Match uploaded on YouTube</p>
+        </div>
+    </section>
+
+    <section id="prize" class="section">
+        <div class="card">
+            <h2>🏆 PRIZE & COLLAB</h2>
+            <p>Winner gets Diamonds & Shoutout!</p>
+            <p>Collab: <b>Survivalguy 444</b></p>
         </div>
     </section>
 
