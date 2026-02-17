@@ -45,18 +45,6 @@
 
         .host-title { color: #ccc; font-size: 1.3rem; margin-top: 10px; font-weight: bold; }
 
-        /* Status Bar */
-        .status-bar {
-            background: rgba(0, 255, 136, 0.1);
-            color: #00ff88;
-            padding: 10px;
-            text-align: center;
-            font-family: 'Orbitron';
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border-bottom: 1px solid #00ff88;
-        }
-
         .container { max-width: 900px; margin: 20px auto 80px; padding: 0 20px; }
         
         .glass-card { 
@@ -78,14 +66,16 @@
             text-transform: uppercase;
         }
 
-        /* Points Table Style */
-        .points-table { width: 100%; text-align: center; margin-top: 10px; }
-        .points-table th { color: var(--accent); }
-        .points-table td { padding: 10px; background: rgba(255,255,255,0.02); border-radius: 5px; }
-
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
-        .feature-item { background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--primary); padding: 12px; text-align: center; border-radius: 10px; }
-        .feature-item b { display: block; color: var(--accent); margin-top: 5px; }
+        /* Round Box Management */
+        .round-box {
+            border-left: 3px solid var(--accent);
+            background: rgba(240, 147, 251, 0.05);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 10px 10px 0;
+        }
+        .round-box h3 { margin: 0; color: var(--accent); font-family: 'Orbitron'; font-size: 1rem; }
+        .round-box p { margin: 5px 0 0 0; color: #bbb; font-size: 0.9rem; }
 
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .info-box { background: rgba(0, 242, 254, 0.05); padding: 15px; border-radius: 10px; border: 1px solid rgba(0, 242, 254, 0.2); text-align: center; }
@@ -96,23 +86,22 @@
         td { padding: 15px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
         .vip-row { background: rgba(255, 204, 0, 0.1); border-left: 5px solid var(--gold); }
-        .gold-name { font-size: 1.4rem; font-weight: 900; color: var(--gold); display: block; text-shadow: 0 0 10px rgba(255,204,0,0.3); }
+        .gold-name { font-size: 1.4rem; font-weight: 900; color: var(--gold); display: block; }
         .gold-uid { color: var(--gold); font-family: 'Orbitron'; font-size: 0.9rem; display: block; margin-top: 5px; }
 
         .btn-flex { display: flex; gap: 12px; margin-top: 20px; }
-        .social-btn { flex: 1; padding: 12px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; text-align: center; font-family: 'Orbitron'; transition: 0.3s; }
-        .yt { background: #ff0000; box-shadow: 0 0 10px rgba(255,0,0,0.3); }
-        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 0 10px rgba(220,39,67,0.3); }
-        .social-btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
+        .social-btn { flex: 1; padding: 12px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; text-align: center; font-family: 'Orbitron'; }
+        .yt { background: #ff0000; }
+        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
 
-        footer { text-align: center; padding: 50px; color: #444; font-size: 0.9rem; border-top: 1px solid #111; }
+        .channel-info { text-align: center; border-top: 1px solid #222; padding-top: 30px; margin-top: 50px; }
+        .channel-info h2 { border: none; color: var(--gold); }
+        .channel-info p { color: #888; line-height: 1.6; max-width: 600px; margin: 0 auto; font-style: italic; }
+
+        footer { text-align: center; padding: 50px; color: #444; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-
-    <div class="status-bar">
-        ● REGISTRATION STATUS: OPEN (20 SLOTS ONLY)
-    </div>
 
     <div class="header">
         <h1>Free Fire Tournament</h1>
@@ -122,55 +111,37 @@
     <div class="container">
         
         <div class="glass-card">
-            <h2>🎮 Match Settings</h2>
-            <div class="feature-grid">
-                <div class="feature-item">Mode <b>Solo / Classic</b></div>
-                <div class="feature-item">Gun Skin <b>No Property</b></div>
-                <div class="feature-item">Character <b>Skill On</b></div>
-                <div class="feature-item">Map <b>Bermuda</b></div>
+            <h2>🏆 Tournament Format (3 Matches)</h2>
+            <p style="color: #00ff88; margin-bottom: 15px;">આ ટુર્નામેન્ટ પોઈન્ટ્સ ટેબલ પર રમાશે. ૩ મેચના અંતે વિનર નક્કી થશે.</p>
+            
+            <div class="round-box">
+                <h3>GAME 01: BERMUDA</h3>
+                <p>બધા ૨૦ પ્લેયર્સ પહેલી મેચ રમશે. કિલ અને પોઝિશનના પોઈન્ટ્સ ગણાશે.</p>
+            </div>
+            <div class="round-box">
+                <h3>GAME 02: PURGATORY / NEXTERRA</h3>
+                <p>બધા ૨૦ પ્લેયર્સ બીજી મેચ રમશે. સ્કોરબોર્ડ અપડેટ થશે.</p>
+            </div>
+            <div class="round-box" style="border-color: var(--gold); background: rgba(255,204,0,0.05);">
+                <h3 style="color: var(--gold);">GAME 03: THE FINAL BATTLE</h3>
+                <p>છેલ્લી મેચ! ત્રણેય મેચના પોઈન્ટ્સ ભેગા કરી જેનો ટોટલ વધારે હશે તે "Champion" બનશે.</p>
             </div>
         </div>
 
         <div class="glass-card">
-            <h2>📅 Match Schedule</h2>
+            <h2>📅 Schedule & Info</h2>
             <div class="info-grid">
                 <div class="info-box"><span>Match Day</span><b>This Sunday</b></div>
-                <div class="info-box"><span>Match Time</span><b>03:00 PM</b></div>
+                <div class="info-box"><span>Start Time</span><b>03:00 PM</b></div>
             </div>
-            <p style="color: #666; font-size: 0.9rem; margin-top: 15px; text-align: center;">Note: Room ID and Password will be shared on Social Media.</p>
+            <p style="text-align: center; margin-top: 15px; color: #888;">દરેક ગેમ વચ્ચે 10 મિનિટનો બ્રેક રહેશે.</p>
         </div>
 
         <div class="glass-card">
-            <h2>📊 Point System</h2>
-            <table class="points-table">
-                <tr>
-                    <th>Position</th>
-                    <th>Points</th>
-                    <th>Kills</th>
-                </tr>
-                <tr>
-                    <td>#1 (Booyah)</td>
-                    <td>12 pts</td>
-                    <td>1 Kill = 1 pt</td>
-                </tr>
-                <tr>
-                    <td>#2 Place</td>
-                    <td>9 pts</td>
-                    <td>-</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="glass-card">
-            <h2>📜 Official Rules</h2>
-            <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 1.1rem;">
-                <li>🔥 <b>Fair Play:</b> No teaming or cheating.</li>
-                <li>🔥 <b>Device:</b> Mobile only. Emulators will be kicked.</li>
-                <li>🔥 <b>Verification:</b> Your UID must match with registered UID.</li>
-            </ul>
+            <h2>🔗 Social Links</h2>
             <div class="btn-flex">
-                <a href="https://youtube.com/@survivalguy444" class="social-btn yt">SUBSCRIBE</a>
-                <a href="https://instagram.com/rahul_jethva_.00" class="social-btn ig">FOLLOW</a>
+                <a href="https://youtube.com/@survivalguy444" class="social-btn yt">SUBSCRIBE YOUTUBE</a>
+                <a href="https://instagram.com/rahul_jethva_.00" class="social-btn ig">FOLLOW INSTAGRAM</a>
             </div>
         </div>
 
@@ -184,10 +155,7 @@
                     <tbody>
                         <tr class="vip-row">
                             <td>01</td>
-                            <td>
-                                <span class="gold-name">Rahul Jethva</span>
-                                <span class="gold-uid">UID: 2552411940</span>
-                            </td>
+                            <td><span class="gold-name">Rahul Jethva</span><span class="gold-uid">UID: 2552411940</span></td>
                             <td><b style="color: var(--gold);">VERIFIED</b></td>
                         </tr>
                         <tr><td>02</td><td>Empty Slot</td><td>Ready</td></tr>
@@ -214,13 +182,18 @@
             </div>
         </div>
 
-        <p style="text-align: center; color: #444; font-size: 0.8rem; margin-top: 40px;">
-            This tournament is hosted for entertainment. Survivalguy444 reserves all rights to make final decisions.
-        </p>
+        <div class="channel-info">
+            <h2>About Survivalguy444</h2>
+            <p>
+                Welcome to the home of pro gaming! Survivalguy444 is more than just a channel; it's a community for Free Fire lovers. 
+                I host these tournaments to support rising talent and bring the community together. 
+                Don't forget to subscribe for live streams, gameplay tips, and more tournament updates!
+            </p>
+        </div>
 
     </div>
 
-    <footer>© 2026 SURVIVALGUY444 ESPORTS | ALL RIGHTS RESERVED</footer>
+    <footer>© 2026 SURVIVALGUY444 ESPORTS | THE LEGEND LIVES HERE</footer>
 
 </body>
 </html>
