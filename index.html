@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survivalguy444 | Official Tournament</title>
+    <title>Survivalguy444 | Pro Tournament</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
@@ -11,7 +11,7 @@
         :root { 
             --gold: #ffcc00; 
             --primary: #00f2fe; 
-            --accent: #ff4d4d; /* Logo color match */
+            --accent: #ff4d4d; 
             --bg: #05050a; 
             --card-bg: rgba(20, 20, 35, 0.95); 
         }
@@ -20,180 +20,110 @@
             font-family: 'Rajdhani', sans-serif; 
             background-color: var(--bg); 
             color: #fff; 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden;
+            margin: 0; padding: 0; 
             background-image: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%);
         }
         
-        /* Header with Logo Animation */
         .header { 
-            background: linear-gradient(135deg, #0f2027, #2c5364); 
-            padding: 50px 20px; 
+            padding: 60px 20px; 
             text-align: center; 
-            border-bottom: 4px solid var(--accent); 
+            background: linear-gradient(135deg, #0f2027, #2c5364); 
+            border-bottom: 4px solid var(--accent);
             clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-            animation: fadeInDown 1.2s;
+            animation: fadeInDown 1s;
         }
 
-        .logo-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .logo-img {
-            width: 130px;
-            height: 130px;
+        /* Your Logo Styling */
+        .logo-box {
+            width: 130px; height: 130px;
+            margin: 0 auto 15px;
             border-radius: 50%;
             border: 4px solid var(--accent);
-            box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
-            object-fit: cover;
-            animation: pulse 2s infinite;
+            box-shadow: 0 0 25px var(--accent);
+            overflow: hidden;
+            background: #000;
         }
+        .logo-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        h1 { 
-            font-family: 'Orbitron', sans-serif; 
-            font-size: 2.3rem; 
-            margin: 10px 0 0; 
-            background: linear-gradient(90deg, #fff, var(--accent)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-        }
+        h1 { font-family: 'Orbitron'; font-size: 2.2rem; margin: 0; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
 
         .container { max-width: 900px; margin: 20px auto 80px; padding: 0 20px; }
         
         .glass-card { 
             background: var(--card-bg); 
-            border-radius: 15px; 
-            padding: 25px; 
-            margin-bottom: 30px; 
+            border-radius: 15px; padding: 25px; margin-bottom: 30px; 
             border: 1px solid rgba(255, 77, 77, 0.1); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: 0.3s ease;
+            animation: fadeInUp 1s;
         }
 
-        .glass-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 15px 40px rgba(255, 77, 77, 0.2);
-        }
+        h2 { font-family: 'Orbitron'; color: var(--accent); border-bottom: 1px solid rgba(255,77,77,0.2); padding-bottom: 10px; margin-top: 0; }
 
-        h2 { 
-            font-family: 'Orbitron', sans-serif; 
-            color: var(--accent); 
-            font-size: 1.4rem; 
-            margin-bottom: 15px; 
-            border-bottom: 1px solid rgba(255, 77, 77, 0.2); 
-            padding-bottom: 8px; 
-        }
+        /* Match Settings Grid */
+        .settings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-top: 15px; }
+        .setting-item { background: rgba(255, 77, 77, 0.05); border: 1px dashed var(--accent); padding: 15px; text-align: center; border-radius: 10px; }
+        .setting-item b { display: block; color: #fff; margin-top: 5px; }
 
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; }
-        .feature-item { 
-            background: rgba(255, 77, 77, 0.05); 
-            border: 1px dashed var(--accent); 
-            padding: 15px; 
-            text-align: center; 
-            border-radius: 10px;
-        }
-        .feature-item b { display: block; color: #fff; margin-top: 5px; font-size: 1.1rem; }
+        /* Player Table */
+        .player-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .player-table th { text-align: left; color: #888; padding: 10px; border-bottom: 2px solid #222; }
+        .player-table td { padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        
+        .vip-row { background: rgba(255, 204, 0, 0.1); border-left: 5px solid var(--gold); }
+        .gold-name { color: var(--gold); font-weight: bold; font-size: 1.2rem; display: block; }
+        .verified-tag { color: var(--gold); font-size: 0.8rem; font-weight: bold; border: 1px solid var(--gold); padding: 2px 6px; border-radius: 4px; }
 
-        .round-box {
-            border-left: 4px solid var(--gold);
-            background: rgba(255, 204, 0, 0.05);
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .btn-flex { display: flex; gap: 15px; margin-top: 25px; }
-        .social-btn { 
-            flex: 1; padding: 15px; border-radius: 10px; text-decoration: none; 
-            color: white; font-weight: bold; text-align: center; font-family: 'Orbitron';
-            transition: 0.3s;
-        }
-        .yt { background: #ff0000; box-shadow: 0 5px 15px rgba(255,0,0,0.3); }
-        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 5px 15px rgba(220,39,67,0.3); }
+        .btn-flex { display: flex; gap: 15px; margin-top: 20px; }
+        .social-btn { flex: 1; padding: 12px; border-radius: 8px; text-decoration: none; color: #fff; text-align: center; font-family: 'Orbitron'; font-weight: bold; transition: 0.3s; }
+        .yt { background: #ff0000; } .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
         .social-btn:hover { transform: scale(1.05); filter: brightness(1.2); }
 
-        table { width: 100%; border-collapse: collapse; }
-        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .vip-row { background: rgba(255, 204, 0, 0.1); border-left: 5px solid var(--gold); }
-        .gold-name { font-size: 1.4rem; font-weight: 900; color: var(--gold); display: block; }
-
-        .channel-info { text-align: center; padding: 50px 20px; border-top: 1px solid #222; margin-top: 30px; }
-        footer { text-align: center; padding: 40px; color: #444; font-size: 0.9rem; }
-
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <div class="logo-container animate__animated animate__zoomIn">
-            <img src="1000062173.jpg" alt="Survival Guy Logo" class="logo-img">
+        <div class="logo-box animate__animated animate__zoomIn">
+            <img src="https://i.ibb.co/6RTPXN1p/1000062173.jpg" alt="Survivalguy444 Logo">
         </div>
-        <h1 class="animate__animated animate__fadeIn">Survival Guy 444</h1>
-        <div class="host-title">Esports Tournament Dashboard</div>
+        <h1 class="animate__animated animate__fadeInDown">Survivalguy 444</h1>
     </div>
 
     <div class="container">
         
-        <div class="glass-card animate__animated animate__fadeInUp">
-            <h2>🎮 Match Configuration</h2>
-            <div class="feature-grid">
-                <div class="feature-item">Mode <b>Solo / Classic</b></div>
-                <div class="feature-item">Gun Skin <b>No Property</b></div>
-                <div class="feature-item">Character <b>Skill On</b></div>
-                <div class="feature-item">Map <b>Bermuda</b></div>
+        <div class="glass-card">
+            <h2>🎮 Match Settings</h2>
+            <div class="settings-grid">
+                <div class="setting-item">Mode <b>Solo / Classic</b></div>
+                <div class="setting-item">Gun Skin <b>No Property</b></div>
+                <div class="setting-item">Character <b>Skill On</b></div>
+                <div class="setting-item">Map <b>Bermuda</b></div>
             </div>
         </div>
 
-        <div class="glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-            <h2>🏆 3-Match Points Series</h2>
-            <div class="round-box">
-                <h3>GAME 1 & 2</h3>
-                <p>બધા ૨૦ પ્લેયર્સ બેક-ટુ-બેક મેચ રમશે. દરેક કિલના ૧ પોઈન્ટ રહેશે.</p>
-            </div>
-            <div class="round-box" style="border-color: var(--accent); background: rgba(255, 77, 77, 0.05);">
-                <h3 style="color: var(--accent);">GRAND FINALE</h3>
-                <p>છેલ્લી મેચના અંતે હાઈએસ્ટ પોઈન્ટ્સ વાળો પ્લેયર ચેમ્પિયન બનશે!</p>
-            </div>
-        </div>
-
-        <div class="glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
-            <h2>🔗 Connect With Us</h2>
-            <p style="text-align: center; color: #ccc;">Room ID અને Password માટે નીચેની ચેનલ્સ ફોલો કરો.</p>
-            <div class="btn-flex">
-                <a href="https://youtube.com/@survivalguy444" class="social-btn yt">SUBSCRIBE YT</a>
-                <a href="https://instagram.com/rahul_jethva_.00" class="social-btn ig">FOLLOW IG</a>
-            </div>
-        </div>
-
-        <div class="glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
-            <h2>👤 Registered Squad (20)</h2>
+        <div class="glass-card">
+            <h2>👤 Registered Players (20)</h2>
             <div style="overflow-x: auto;">
-                <table>
-                    <tr class="vip-row">
-                        <td>01</td>
-                        <td><span class="gold-name">Rahul Jethva</span><small style="color:var(--gold)">UID: 2552411940</small></td>
-                        <td><b style="color:var(--gold)">LEADER</b></td>
-                    </tr>
-                    <tr><td>02-20</td><td colspan="2" style="color: #666;">Waiting for more survivors...</td></tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="channel-info">
-            <h2 style="color: var(--accent);">About The Creator</h2>
-            <p>Survivalguy444 પર અમે ગેમિંગ કોમ્યુનિટીને એકસાથે લાવવા માટે બેસ્ટ ટુર્નામેન્ટ્સ હોસ્ટ કરીએ છીએ. જોડાઓ અને તમારી સ્કિલ બતાવો!</p>
-        </div>
-
-    </div>
-
-    <footer>© 2026 SURVIVAL GUY ESPORTS | ALL RIGHTS RESERVED</footer>
-
-</body>
-</html>
+                <table class="player-table">
+                    <thead>
+                        <tr><th>#</th><th>Player Name & UID</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="vip-row">
+                            <td>01</td>
+                            <td><span class="gold-name">Rahul Jethva</span><small>UID: 2552411940</small></td>
+                            <td><span class="verified-tag">VERIFIED</span></td>
+                        </tr>
+                        <tr><td>02</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>03</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>04</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>05</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>06</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>07</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>08</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>09</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>10</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>11</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>12</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>13</td><td>Empty Slot</td><td>Ready</td></tr>
+                        <tr><td>14</td><td>Empty Slot</td><td>
