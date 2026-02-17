@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survivalguy444 | Pro Tournament Dashboard</title>
+    <title>Survivalguy444 | Animated Pro Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <style>
         :root { 
             --gold: #ffcc00; 
@@ -20,27 +23,30 @@
             color: #fff; 
             margin: 0; 
             padding: 0; 
+            overflow-x: hidden;
             background-image: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%);
         }
         
+        /* Header Animation */
         .header { 
             background: linear-gradient(135deg, #0f2027, #2c5364); 
-            padding: 70px 20px; 
+            padding: 80px 20px; 
             text-align: center; 
             border-bottom: 4px solid var(--primary); 
             clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+            animation: fadeInDown 1.2s;
         }
 
         h1 { 
             font-family: 'Orbitron', sans-serif; 
-            font-size: 2.2rem; 
+            font-size: 2.5rem; 
             margin: 0; 
             background: linear-gradient(90deg, var(--primary), var(--accent)); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
             text-transform: uppercase; 
-            letter-spacing: 2px; 
+            letter-spacing: 3px;
+            animation: pulse 2s infinite;
         }
 
         .host-title { color: #ccc; font-size: 1.3rem; margin-top: 10px; font-weight: bold; }
@@ -52,148 +58,182 @@
             border-radius: 15px; 
             padding: 25px; 
             margin-bottom: 30px; 
-            border: 1px solid rgba(255,255,255,0.08); 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 242, 254, 0.2);
+            border-color: var(--primary);
         }
 
         h2 { 
             font-family: 'Orbitron', sans-serif; 
             color: var(--primary); 
             font-size: 1.5rem; 
-            margin: 0 0 15px 0; 
+            margin-bottom: 20px; 
             border-bottom: 1px solid rgba(255,255,255,0.1); 
             padding-bottom: 10px; 
             text-transform: uppercase;
         }
 
-        /* Round Box Management */
+        /* Feature Grid (Match Settings) */
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
+        .feature-item { 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px dashed var(--primary); 
+            padding: 15px; 
+            text-align: center; 
+            border-radius: 10px;
+            animation: fadeIn 2s;
+        }
+        .feature-item b { display: block; color: var(--accent); margin-top: 5px; font-size: 1.1rem; }
+
+        /* Round Info */
         .round-box {
-            border-left: 3px solid var(--accent);
+            border-left: 4px solid var(--accent);
             background: rgba(240, 147, 251, 0.05);
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 0 10px 10px 0;
+            animation: fadeInLeft 1s;
         }
-        .round-box h3 { margin: 0; color: var(--accent); font-family: 'Orbitron'; font-size: 1rem; }
-        .round-box p { margin: 5px 0 0 0; color: #bbb; font-size: 0.9rem; }
 
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .info-box { background: rgba(0, 242, 254, 0.05); padding: 15px; border-radius: 10px; border: 1px solid rgba(0, 242, 254, 0.2); text-align: center; }
-        .info-box span { color: var(--accent); display: block; font-size: 0.8rem; text-transform: uppercase; }
+        .info-box { 
+            background: rgba(0, 242, 254, 0.05); 
+            padding: 15px; 
+            border-radius: 10px; 
+            border: 1px solid rgba(0, 242, 254, 0.2); 
+            text-align: center; 
+        }
 
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th { text-align: left; padding: 12px; color: #888; border-bottom: 2px solid #222; }
-        td { padding: 15px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        /* Buttons Animation */
+        .btn-flex { display: flex; gap: 15px; margin-top: 20px; }
+        .social-btn { 
+            flex: 1; 
+            padding: 15px; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            color: white; 
+            font-weight: bold; 
+            text-align: center; 
+            font-family: 'Orbitron';
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .yt { background: #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.3); }
+        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 0 15px rgba(220,39,67,0.3); }
+        
+        .social-btn:hover {
+            transform: scale(1.05);
+            filter: brightness(1.3);
+            box-shadow: 0 0 25px var(--primary);
+        }
 
+        /* Player Table */
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .vip-row { background: rgba(255, 204, 0, 0.1); border-left: 5px solid var(--gold); }
-        .gold-name { font-size: 1.4rem; font-weight: 900; color: var(--gold); display: block; }
-        .gold-uid { color: var(--gold); font-family: 'Orbitron'; font-size: 0.9rem; display: block; margin-top: 5px; }
+        .gold-name { font-size: 1.3rem; font-weight: 900; color: var(--gold); display: block; }
 
-        .btn-flex { display: flex; gap: 12px; margin-top: 20px; }
-        .social-btn { flex: 1; padding: 12px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; text-align: center; font-family: 'Orbitron'; }
-        .yt { background: #ff0000; }
-        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+        /* Channel Section Animation */
+        .channel-info { text-align: center; padding: 40px 20px; animation: fadeInUp 1.5s; }
+        .channel-info h2 { border: none; color: var(--gold); font-size: 2rem; }
 
-        .channel-info { text-align: center; border-top: 1px solid #222; padding-top: 30px; margin-top: 50px; }
-        .channel-info h2 { border: none; color: var(--gold); }
-        .channel-info p { color: #888; line-height: 1.6; max-width: 600px; margin: 0 auto; font-style: italic; }
+        footer { text-align: center; padding: 40px; color: #444; font-size: 0.9rem; border-top: 1px solid #111; }
 
-        footer { text-align: center; padding: 50px; color: #444; font-size: 0.9rem; }
+        /* Custom Keyframes */
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>Free Fire Tournament</h1>
+        <h1 class="animate__animated animate__zoomIn">Free Fire Tournament</h1>
         <div class="host-title">By Survivalguy444</div>
     </div>
 
     <div class="container">
         
-        <div class="glass-card">
-            <h2>🏆 Tournament Format (3 Matches)</h2>
-            <p style="color: #00ff88; margin-bottom: 15px;">આ ટુર્નામેન્ટ પોઈન્ટ્સ ટેબલ પર રમાશે. ૩ મેચના અંતે વિનર નક્કી થશે.</p>
-            
-            <div class="round-box">
-                <h3>GAME 01: BERMUDA</h3>
-                <p>બધા ૨૦ પ્લેયર્સ પહેલી મેચ રમશે. કિલ અને પોઝિશનના પોઈન્ટ્સ ગણાશે.</p>
+        <div class="glass-card animate__animated animate__fadeInUp">
+            <h2>🎮 Match Settings</h2>
+            <div class="feature-grid">
+                <div class="feature-item">Mode <b>Solo / Classic</b></div>
+                <div class="feature-item">Gun Skin <b>No Property</b></div>
+                <div class="feature-item">Character <b>Skill On</b></div>
+                <div class="feature-item">Map <b>Bermuda</b></div>
             </div>
+        </div>
+
+        <div class="glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <h2>🏆 Tournament Format (3 Matches)</h2>
             <div class="round-box">
-                <h3>GAME 02: PURGATORY / NEXTERRA</h3>
-                <p>બધા ૨૦ પ્લેયર્સ બીજી મેચ રમશે. સ્કોરબોર્ડ અપડેટ થશે.</p>
+                <h3>MATCH 01: BERMUDA</h3>
+                <p>બધા ૨૦ પ્લેયર્સ પહેલી મેચ રમશે. પોઈન્ટ્સ ગણાશે.</p>
+            </div>
+            <div class="round-box" style="border-color: var(--primary);">
+                <h3>MATCH 02: PURGATORY</h3>
+                <p>બીજી મેચ! સ્કોર અપડેટ કરવામાં આવશે.</p>
             </div>
             <div class="round-box" style="border-color: var(--gold); background: rgba(255,204,0,0.05);">
-                <h3 style="color: var(--gold);">GAME 03: THE FINAL BATTLE</h3>
-                <p>છેલ્લી મેચ! ત્રણેય મેચના પોઈન્ટ્સ ભેગા કરી જેનો ટોટલ વધારે હશે તે "Champion" બનશે.</p>
+                <h3 style="color: var(--gold);">FINAL MATCH: THE CHAMPION</h3>
+                <p>છેલ્લો રાઉન્ડ! જેનો ટોટલ વધારે હશે તે વિનર ગણાશે.</p>
             </div>
         </div>
 
-        <div class="glass-card">
+        <div class="glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
             <h2>📅 Schedule & Info</h2>
             <div class="info-grid">
-                <div class="info-box"><span>Match Day</span><b>This Sunday</b></div>
-                <div class="info-box"><span>Start Time</span><b>03:00 PM</b></div>
+                <div class="info-box"><span>Day</span><b>Sunday</b></div>
+                <div class="info-box"><span>Time</span><b>03:00 PM</b></div>
             </div>
-            <p style="text-align: center; margin-top: 15px; color: #888;">દરેક ગેમ વચ્ચે 10 મિનિટનો બ્રેક રહેશે.</p>
-        </div>
-
-        <div class="glass-card">
-            <h2>🔗 Social Links</h2>
             <div class="btn-flex">
-                <a href="https://youtube.com/@survivalguy444" class="social-btn yt">SUBSCRIBE YOUTUBE</a>
-                <a href="https://instagram.com/rahul_jethva_.00" class="social-btn ig">FOLLOW INSTAGRAM</a>
+                <a href="https://youtube.com/@survivalguy444" class="social-btn yt">YOUTUBE</a>
+                <a href="https://instagram.com/rahul_jethva_.00" class="social-btn ig">INSTAGRAM</a>
             </div>
         </div>
 
-        <div class="glass-card">
+        <div class="glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
             <h2>👤 Registered Players (20)</h2>
             <div style="overflow-x: auto;">
                 <table>
-                    <thead>
-                        <tr><th>#</th><th>Player Details</th><th>Status</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr class="vip-row">
-                            <td>01</td>
-                            <td><span class="gold-name">Rahul Jethva</span><span class="gold-uid">UID: 2552411940</span></td>
-                            <td><b style="color: var(--gold);">VERIFIED</b></td>
-                        </tr>
-                        <tr><td>02</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>03</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>04</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>05</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>06</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>07</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>08</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>09</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>10</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>11</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>12</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>13</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>14</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>15</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>16</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>17</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>18</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>19</td><td>Empty Slot</td><td>Ready</td></tr>
-                        <tr><td>20</td><td>Empty Slot</td><td>Ready</td></tr>
-                    </tbody>
+                    <tr class="vip-row">
+                        <td>01</td>
+                        <td><span class="gold-name">Rahul Jethva</span><small style="color:var(--gold)">UID: 2552411940</small></td>
+                        <td><b style="color:var(--gold)">VERIFIED</b></td>
+                    </tr>
+                    <tr><td>02</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>03</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>04</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>05</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>06</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>07</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>08</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>09</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>10</td><td>Empty Slot</td><td>Ready</td></tr>
+                    <tr><td>11-20</td><td colspan="2">More slots available...</td></tr>
                 </table>
             </div>
         </div>
 
-        <div class="channel-info">
-            <h2>About Survivalguy444</h2>
+        <div class="channel-info animate__animated animate__fadeInUp">
+            <h2>Survivalguy444 Channel</h2>
             <p>
                 Welcome to the home of pro gaming! Survivalguy444 is more than just a channel; it's a community for Free Fire lovers. 
                 I host these tournaments to support rising talent and bring the community together. 
-                Don't forget to subscribe for live streams, gameplay tips, and more tournament updates!
+                Don't forget to subscribe for live streams and more updates!
             </p>
         </div>
 
     </div>
 
-    <footer>© 2026 SURVIVALGUY444 ESPORTS | THE LEGEND LIVES HERE</footer>
+    <footer>© 2026 SURVIVALGUY444 ESPORTS</footer>
 
 </body>
 </html>
